@@ -19,7 +19,7 @@ public class UserRequestValidator {
         this.collectionManager = new CollectionManager(this);
     }
 
-    void go(Scanner scanner) {
+    void validate(Scanner scanner) {
         System.out.println("Добро пожаловать в музыкальный блокнот!\n" + "Для того чтобы ознакомиться с возможными командами введите help\n");
         BandBuilder bandBuilder = new BandBuilder(scanner);
         boolean needExit = false;

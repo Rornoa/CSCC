@@ -1,6 +1,6 @@
 package ClientKernel;
 
-public enum CommandName {
+public enum CommandName{
     HELP,
     INFO,
     SHOW,

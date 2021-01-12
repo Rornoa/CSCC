@@ -1,7 +1,8 @@
 package input_output;
 
+import collection.MusicBand;
+
 import java.io.Serializable;
-import collection.*;
 
 public class Message implements Serializable {
     private String commandName;
