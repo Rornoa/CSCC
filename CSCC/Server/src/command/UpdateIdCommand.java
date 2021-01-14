@@ -1,5 +1,6 @@
 package command;
 
-public class UpdateIdCommand
-{
+public class UpdateIdCommand extends Command {
+
+
 }

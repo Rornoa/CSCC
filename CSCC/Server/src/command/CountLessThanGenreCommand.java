@@ -1,4 +1,4 @@
 package command;
 
-public class CountLessThanGenreCommand {
+public class CountLessThanGenreCommand extends Command {
 }

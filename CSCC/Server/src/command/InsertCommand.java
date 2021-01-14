@@ -1,4 +1,4 @@
 package command;
 
-public class InsertCommand {
+public class InsertCommand extends Command {
 }

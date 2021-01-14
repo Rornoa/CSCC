@@ -1,4 +1,4 @@
 package command;
 
-public class RemoveByIdCommand {
+public class RemoveByIdCommand extends Command {
 }

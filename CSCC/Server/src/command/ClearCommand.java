@@ -1,4 +1,4 @@
 package command;
 
-public class ClearCommand {
+public class ClearCommand extends Command {
 }

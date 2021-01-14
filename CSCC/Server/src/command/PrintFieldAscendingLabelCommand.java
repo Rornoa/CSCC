@@ -1,4 +1,4 @@
 package command;
 
-public class PrintFieldAscendingLabelCommand {
+public class PrintFieldAscendingLabelCommand extends Command{
 }

@@ -1,19 +1,19 @@
 package command;
 
-import
+/**
+ * Абсрактный класс Команды. Содержит в себе название, описание команды и ее аргументы и выполение
+ * Описывает выполнение общего "интерфейса" команд для общения получателя и отправителя.
+ */
 
-public interface Command {
+public abstract class Command {
 
-    @Override
-    public void execute();
+        private CommandName name;
+        private String description;
+        private String args="";
 
-    @Override
-    public void execute();
+        @Override
+        public void execute(){
 
-    @Override
-    public void execute();
-
-    @Override
-    public void execute();
+        }
 
 }

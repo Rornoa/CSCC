@@ -1,4 +1,4 @@
 package command;
 
-public class FilterStartsWithNameCommand {
+public class FilterStartsWithNameCommand extends Command {
 }

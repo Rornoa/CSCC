@@ -1,4 +1,16 @@
 package ServerKernel;
 
-public class Invoker {
+import command.*;
+
+public class Invoker{
+
+    public void setCommand(){
+
+    }
+
+    public void exucteCommand(){
+
+    }
+
+
 }

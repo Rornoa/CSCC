@@ -1,4 +1,4 @@
 package command;
 
-public class InfoCommand {
+public class InfoCommand extends Command {
 }

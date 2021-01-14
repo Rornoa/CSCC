@@ -1,4 +1,4 @@
 package command;
 
-public class ShowCommand {
+public class ShowCommand extends Command {
 }

@@ -1,4 +1,4 @@
 package command;
 
-public class ExecuteScriptCommand {
+public class ExecuteScriptCommand extends Command {
 }

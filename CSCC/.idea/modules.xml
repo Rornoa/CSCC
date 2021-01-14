@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CSCC.iml" filepath="$PROJECT_DIR$/CSCC.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Client/Client.iml" filepath="$PROJECT_DIR$/Client/Client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Middle/Middle.iml" filepath="$PROJECT_DIR$/Middle/Middle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Server/Server.iml" filepath="$PROJECT_DIR$/Server/Server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Client/ClientServerCommandCollection.Client.iml" filepath="$PROJECT_DIR$/Client/ClientServerCommandCollection.Client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Middle/ClientServerCommandCollection.Middle.iml" filepath="$PROJECT_DIR$/Middle/ClientServerCommandCollection.Middle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Server/ClientServerCommandCollection.Server.iml" filepath="$PROJECT_DIR$/Server/ClientServerCommandCollection.Server.iml" />
     </modules>
   </component>
 </project>

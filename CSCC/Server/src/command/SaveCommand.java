@@ -1,4 +1,4 @@
 package command;
 
-public class SaveCommand {
+public class SaveCommand extends Command {
 }

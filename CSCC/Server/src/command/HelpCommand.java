@@ -1,4 +1,4 @@
 package command;
 
-public class HelpCommand {
+public class HelpCommand extends Command {
 }
