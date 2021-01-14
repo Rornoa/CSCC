@@ -1,4 +1,4 @@
-package ClientKernel;
+package client_kernel;
 
 import building_procedure.BandBuilder;
 

@@ -1,4 +1,4 @@
-package ClientKernel;
+package client_kernel;
 
 import input_output.Message;
 import java.io.IOException;
