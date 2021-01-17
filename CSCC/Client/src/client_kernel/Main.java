@@ -1,23 +1,15 @@
 package client_kernel;
 
-import input_output.Message;
-import java.io.IOException;
-
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args){
-        UserRequestValidator  urv;
-        System.out.println(" Клиент был запущен. ");
-
-        while(true){
-            try{
-                urv = new UserRequestValidator();
-                Message message = urv.validate();
-
-            }catch(IOException e){
-                System.out.println("Ошибичка вышла!");
-
-            }
-        }
+    public static void main(String[] args) {
+        CollectionManager collection;
+        Application app = new Application();
+//        if (args.length!=0)
+//            collection=new CollectionManager(new File(args[0]));
+//        else  collection=new CollectionManager(app);
+//
+        app.go(new Scanner(System.in));
     }
 }

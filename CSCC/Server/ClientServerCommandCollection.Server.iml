@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ClientServerCommandCollection.Middle" exported="" />
+    <orderEntry type="module" module-name="ClientServerCommandCollection.Client" exported="" />
   </component>
 </module>
