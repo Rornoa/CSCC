@@ -5,7 +5,7 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class MyServer extends Thread
+public class ServerNetwork extends Thread
 {
     // открываемый порт сервера
     private static final int port   = 6666;
@@ -17,7 +17,17 @@ public class MyServer extends Thread
     private  Socket socket;
     private  int    num;
 
-    public MyServer() {}
+    public ServerNetwork() {
+        try(){
+            ServerSocket = serverSocket
+
+        }
+
+
+    }
+
+
+
     public void setSocket(int num, Socket socket)
     {
         // Определение значений
@@ -57,8 +67,7 @@ public class MyServer extends Thread
             while(true) {
                 // Ожидание сообщения от клиента
                 line = dis.readUTF();
-                System.out.println(
-                        String.format(TEMPL_MSG, num) + line);
+                System.out.println(String.format(TEMPL_MSG, num) + line);
                 // Отсылаем клиенту обратно эту самую
                 // строку текста
                 serverSays = keyboard.readLine();
@@ -99,7 +108,7 @@ public class MyServer extends Thread
                     System.err.println("Client accepted");
                     // Стартуем обработку клиента
                     // в отдельном потоке
-                    new MyServer().setSocket(i++, socket);
+                    new ServerNetwork().setSocket(i++, socket);
                 }
             } catch(Exception e) {
                 System.out.println("Exception : " + e);

@@ -37,12 +37,6 @@ public class XMLWriter {
         }
 
     }
-
-    public static void main(String[] args) {
-        writeInFile();
-    }
-
-
     public void write(Vector<MusicBand> musicBandCollection) {
     }
 }

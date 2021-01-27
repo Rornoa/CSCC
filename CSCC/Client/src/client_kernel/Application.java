@@ -1,8 +1,8 @@
 package client_kernel;
 
 import collection.building.BandBuilder;
-import client_kernel.console.*;
-
+import commands.CommandName;
+import input_output.Message;
 import java.util.Scanner;
 
 public class Application {
@@ -16,7 +16,8 @@ public class Application {
         this.collectionManager = new CollectionManager(this);
     }
 
-    void go(Scanner scanner) {
+    Message go(Scanner scanner) {
+
         System.out.println("Добро пожаловать в музыкальный блокнот!\n" + "Для того чтобы ознакомиться с возможными командами введите help\n");
         String defaultConsoleSymbol = ">>";
         System.out.print(defaultConsoleSymbol);
@@ -25,75 +26,58 @@ public class Application {
                 String command = scanner.nextLine().trim();
                 switch (command) {
                     case "show":
-                        collectionManager.show();
-                    break;
-
+                        return new Message(CommandName.SHOW.getCommandName());
+                        //collectionManager.show();
                     case "info":
-                        collectionManager.info();
-                    break;
-
+                        return new Message(CommandName.INFO.getCommandName());
+                        //collectionManager.info();
                     case "help":
-                        collectionManager.help();
-                    break;
-
+                        return new Message(CommandName.HELP.getCommandName());
+                        //collectionManager.help();
                     case "clear":
-                        collectionManager.clear();
-                    break;
-
+                        return new Message(CommandName.CLEAR.getCommandName());
+                        //collectionManager.clear();
                     case "save":
-                        collectionManager.save();
-                    break;
-
+                        return new Message(CommandName.SAVE.getCommandName());
+                        //collectionManager.save();
                     case "remove_first":
-                        collectionManager.removeFirst();
-                    break;
-
+                        return new Message(CommandName.REMOVE_FIRST.getCommandName());
+                        //collectionManager.removeFirst();
                     case "exit":
-                        collectionManager.exit();
-                    break;
-
+                        return new Message(CommandName.EXIT.getCommandName());
+                        //collectionManager.exit();
                     case "print_field_ascending_label":
-                        collectionManager.printFieldAscendingLabel();
-                    break;
-
+                        return new Message(CommandName.PRINT_FIELD_ASCENDING_LABEL.getCommandName());
+                        //collectionManager.printFieldAscendingLabel();
                     case "add" :
-                        collectionManager.add(bandBuilder.create());
-                    break;
-
+                        return new Message(CommandName.ADD.getCommandName());
+                        //collectionManager.add(bandBuilder.create());
                     case "remove_by_id":
-                        collectionManager.removeById(commandArgumentHandler.treatmentInt());
-                    break;
-
+                        return new Message(CommandName.REMOVE_BY_ID.getCommandName());
+                        //collectionManager.removeById(commandArgumentHandler.treatmentInt());
                     case "remove_lower":
-                        collectionManager.removeLower(bandBuilder.create());
-                    break;
-
+                        return new Message(CommandName.REMOVE_LOWER.getCommandName());
+                        //collectionManager.removeLower(bandBuilder.create());
                     case "update":
-                        collectionManager.update((long)commandArgumentHandler.treatmentInt(),bandBuilder.create());
-                    break;
-
+                        return new Message(CommandName.UPDATE.getCommandName());
+                        //collectionManager.update((long)commandArgumentHandler.treatmentInt(),bandBuilder.create());
                     case "insert_at_index":
-                        collectionManager.insertAtIndex(commandArgumentHandler.treatmentInt(),bandBuilder.create());
-                    break;
-
+                        return new Message(CommandName.INSERT_AT.getCommandName());
+                        //collectionManager.insertAtIndex(commandArgumentHandler.treatmentInt(),bandBuilder.create());
                     case "filter_starts_with_name":
-                        collectionManager.filterStartsWithName(commandArgumentHandler.treatmentString());
-                    break;
-
+                        return new Message(CommandName.FILTER_STARTS_WITH_NAME.getCommandName());
+                        //collectionManager.filterStartsWithName(commandArgumentHandler.treatmentString());
                     case "count_less_than_genre":
-                        collectionManager.coutLessThanGanre(commandArgumentHandler.treatmentString());
-                    break;
-
+                        return new Message(CommandName.COUNT_LESS_THAN_GENRE.getCommandName());
+                        //collectionManager.coutLessThanGanre(commandArgumentHandler.treatmentString());
                     case "execute_script":
-                        collectionManager.executeScript();
-                    break;
-                    case "stop":
-                        return;
-
+                        return new Message(CommandName.EXECUTE_SCRIPT.getCommandName());
+                        //collectionManager.executeScript();
                     default:
                         System.out.println(" Такой команды нет ");
                 }
         }
+        return null;
     }
 }
 
