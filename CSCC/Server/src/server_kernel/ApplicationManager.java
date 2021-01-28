@@ -1,8 +1,8 @@
 package server_kernel;
 
 import commands.*;
-import xml.ConsoleReader;
-import xml.XMLReader;
+import input_output.ConsoleReader;
+import input_output.XMLReader;
 
 import java.io.IOException;
 

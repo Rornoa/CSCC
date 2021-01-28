@@ -1,6 +1,6 @@
 package client_kernel;
 
-import client_kernel.console.ConsoleReader;
+import input_output.ConsoleReader;
 import exceptions.IMassages;
 
 import java.util.Scanner;

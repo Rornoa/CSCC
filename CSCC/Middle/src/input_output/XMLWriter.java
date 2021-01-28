@@ -1,4 +1,4 @@
-package xml;
+package input_output;
 
 import collection.MusicBand;
 

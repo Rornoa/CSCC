@@ -4,8 +4,8 @@ package server_kernel;
 import collection.MusicBand;
 import commands.Command;
 import commands.CommandName;
-import xml.ConsoleReader;
-import xml.XMLWriter;
+import input_output.ConsoleReader;
+import input_output.XMLWriter;
 
 import java.util.EnumMap;
 import java.util.Map;

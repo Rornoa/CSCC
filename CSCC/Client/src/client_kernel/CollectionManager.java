@@ -1,6 +1,5 @@
 package client_kernel;
 
-import collection.building.*;
 import collection.Coordinates;
 import collection.MusicBand;
 import collection.MusicGenre;
@@ -16,8 +15,7 @@ import java.util.Vector;
 
 public class CollectionManager {
 
-    public static String filePathToWriteName;
-
+    private static String filePathToWriteName;
     private Application app;
     private Date initialisationDate;
     private Vector<MusicBand> vector;
@@ -204,7 +202,7 @@ public class CollectionManager {
         Scanner scanner;
         try {
             scanner = new Scanner(file);
-            app.go(scanner);
+            app.validate(scanner);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

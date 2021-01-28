@@ -19,7 +19,7 @@ public class ServerNetwork extends Thread
 
     public ServerNetwork() {
         try(){
-            ServerSocket = serverSocket
+            ServerSocket = serverSocket;
 
         }
 
