@@ -1,5 +1,7 @@
 package client_kernel.network;
 
+import input_output.Message;
+
 import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -19,33 +21,23 @@ public class ClientNetwork
         socket = new Socket(address,port);
         oos = new ObjectOutputStream(socket.getOutputStream());
         ois = new ObjectInputStream(socket.getInputStream());
-        System.out.println("Welcome to Client side\n" +
-                "Connecting to the server\n\t" +
-                "(IP address " + socket.getInetAddress() +
-                ", port " + socket.getPort() + ")");
-        System.out.println(
-                "The connection is established.");
-        System.out.println(
-                "\tLocalPort = " +
-                        socket.getLocalPort() +
-                        "\n\tInetAddress.HostAddress = " +
-                        socket.getInetAddress()
-                                .getHostAddress());
-
+        System.out.println("Welcome to Client side\n" + "Connecting to the server\n\t" + "(IP address " + socket.getInetAddress() + ", port " + socket.getPort() + ")");
+        System.out.println("The connection is established.");
+        System.out.println("\tLocalPort = " + socket.getLocalPort() + "\n\tInetAddress.HostAddress = " + socket.getInetAddress().getHostAddress());
     }
 
     public static ObjectInputStream getOis(){ return ois; }
 
     public static ObjectOutputStream getOos(){ return oos; }
 
-    public void write(Object object) throws IOException {
+    public void write(Message object) throws IOException {
         while(object!=null){
             oos.writeObject(object);
         }
     }
 
-    public Object read() throws IOException, ClassNotFoundException {
-        return ois.readObject();
+    public Message read() throws IOException, ClassNotFoundException {
+        return (Message)ois.readObject();
     }
 
     public void closeStreams() throws IOException {

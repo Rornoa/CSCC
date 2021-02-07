@@ -3,6 +3,7 @@ package server_kernel;
 import commands.*;
 import input_output.ConsoleReader;
 import input_output.XMLReader;
+import server_kernel.network.Network;
 
 import java.io.IOException;
 
@@ -21,6 +22,7 @@ public class ApplicationManager {
     private String line ="";
     public static String path ="";
     private XMLReader xmlReaderClass;
+    private Network network;
 
     {
         receiver = new Receiver();
@@ -51,7 +53,7 @@ public class ApplicationManager {
      */
 
     public void initialize(){
-        repositoryOfMusicBand.getMusicBandCollection().putAll(xmlReaderClass.parseXML());
+        //repositoryOfMusicBand.getMusicBandCollection().putAll(xmlReaderClass.parseXML());
         System.out.println("______________________________________________________________");
         System.out.println();
 
@@ -88,9 +90,16 @@ public class ApplicationManager {
         invoker.setCommandMap(countLessThanGenre.getName(), countLessThanGenre);
         invoker.setCommandMap(filterStartsWithName.getName(), filterStartsWithName);
         invoker.setCommandMap(printFieldAscendingLabel.getName(), printFieldAscendingLabel);
+
+        while(true){
+            network = new Network();
+
+        }
     }
 
     public String mainMassage(){
         return "Welcome to console base builder. v1.0" + System.lineSeparator() + "© Developed by Nik in 2020. All rights reserved." + System.lineSeparator() + System.lineSeparator() + "Enter 'help' to see legend.";
     }
+
+
 }
