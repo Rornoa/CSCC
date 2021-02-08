@@ -1,8 +1,9 @@
 package commands;
 
+import collection.CommandName;
 import server_kernel.Invoker;
 import server_kernel.Receiver;
-import server_kernel.RepositoryOfMusicBand;
+import server_kernel.CollectionManager;
 import collection.MusicBand;
 
 import java.util.EnumMap;
@@ -18,9 +19,9 @@ public class UpdateIdCommand extends Command{
     }
 
 
-    public void execute(EnumMap<CommandName, Command> map, RepositoryOfMusicBand repositoryOfMusicBand,
+    public void execute(EnumMap<CommandName, Command> map, CollectionManager collectionManager,
                         Invoker commandManager, MusicBand musicBand, String... args) {
-        int id = Integer.parseInt(args[0]);
-        receiver.updateId(repositoryOfMusicBand,musicBand, id);
+        long id = Integer.parseInt(args[0]);
+        receiver.updateId(collectionManager,musicBand, id);
     }
 }

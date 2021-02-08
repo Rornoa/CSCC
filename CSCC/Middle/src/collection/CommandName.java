@@ -1,4 +1,4 @@
-package commands;
+package collection;
 
 public enum CommandName {
     HELP("help"),

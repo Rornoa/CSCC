@@ -1,9 +1,10 @@
 package commands;
 
+import collection.CommandName;
 import server_kernel.Invoker;
 import server_kernel.Receiver;
-import server_kernel.RepositoryOfMusicBand;
-import collectionManager.MusicBand;
+import server_kernel.CollectionManager;
+import collection.MusicBand;
 
 import java.util.EnumMap;
 
@@ -18,8 +19,8 @@ public class RemoveByIdCommand extends Command {
     }
 
     @Override
-    public void execute(EnumMap<CommandName,Command> map, RepositoryOfMusicBand repositoryOfMusicBand, Invoker invoker, MusicBand musicBand, String... args){
+    public void execute(EnumMap<CommandName,Command> map, CollectionManager collectionManager, Invoker invoker, MusicBand musicBand, String... args){
         int key = Integer.parseInt(args[0]);
-        receiver.removeByID(repositoryOfMusicBand,musicBand,key);
+        receiver.removeByID(collectionManager,musicBand,key);
     }
 }

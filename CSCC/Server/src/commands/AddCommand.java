@@ -1,8 +1,9 @@
 package commands;
 
+import collection.CommandName;
 import server_kernel.Invoker;
 import server_kernel.Receiver;
-import server_kernel.RepositoryOfMusicBand;
+import server_kernel.CollectionManager;
 import collection.MusicBand;
 
 import java.util.EnumMap;
@@ -17,8 +18,8 @@ public class AddCommand extends Command {
     }
 
     @Override
-    public void execute(EnumMap<CommandName, Command> map, RepositoryOfMusicBand repositoryOfMusicBand,
+    public void execute(EnumMap<CommandName, Command> map, CollectionManager collectionManager,
                         Invoker invoker, MusicBand musicBand) {
-        receiver.add(repositoryOfMusicBand, musicBand);
+        receiver.add(collectionManager, musicBand);
     }
 }

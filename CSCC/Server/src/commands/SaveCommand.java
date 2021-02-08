@@ -1,8 +1,9 @@
 package commands;
 
+import collection.CommandName;
 import server_kernel.Invoker;
 import server_kernel.Receiver;
-import server_kernel.RepositoryOfMusicBand;
+import server_kernel.CollectionManager;
 
 public class SaveCommand extends Command {
 
@@ -15,7 +16,7 @@ public class SaveCommand extends Command {
     }
 
     @Override
-    public void execute(RepositoryOfMusicBand repositoryOfMusicBand, Invoker commandManager) {
-        receiver.save();
+    public void execute(CollectionManager collectionManager, Invoker commandManager) {
+        receiver.save(collectionManager);
     }
 }

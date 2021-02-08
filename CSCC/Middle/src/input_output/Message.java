@@ -1,47 +1,48 @@
 package input_output;
 
+import collection.CommandName;
 import collection.MusicBand;
 
 import java.io.Serializable;
 
 public class Message implements Serializable {
-    private String commandName;
+    private CommandName commandName;
     private String commandArgs;
-    private int commandArg;
+    private long commandArg;
     private MusicBand band;
 
-    public Message(String commandName){
+    public Message(CommandName commandName){
         this.commandName=commandName;
     }
 
-    public Message(String commandName, String commandArgs){
+    public Message(CommandName commandName, String commandArgs){
         this.commandName = commandName;
         this.commandArgs = commandArgs;
     }
 
-    public Message(String commandName, MusicBand musicBand){
+    public Message(CommandName commandName, MusicBand musicBand){
         this.commandName = commandName;
         band = musicBand;
     }
 
-    public Message(String commandName,String commandArgs,MusicBand musicBand){
+    public Message(CommandName commandName,String commandArgs,MusicBand musicBand){
         this.commandName = commandName;
         this.commandArgs = commandArgs;
         band = musicBand;
     }
 
-    public Message(String commandName, int commandArg) {
+    public Message(CommandName commandName, int commandArg) {
         this.commandName = commandName;
         this.commandArg = commandArg;
     }
 
-    public Message(String commandName, int commandArg, MusicBand musicBand) {
+    public Message(CommandName commandName, int commandArg, MusicBand musicBand) {
         this.commandName = commandName;
         this.commandArg = commandArg;
         band = musicBand;
     }
 
-    public String getCommandName(){
+    public CommandName getCommandName(){
         return commandName;
     }
 
@@ -49,7 +50,7 @@ public class Message implements Serializable {
         return commandArgs;
     }
 
-    public int getCommandArg(){ return commandArg;}
+    public long getCommandArg(){ return commandArg;}
 
     public MusicBand getMusicBand(){
         return band;

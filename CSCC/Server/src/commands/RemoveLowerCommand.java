@@ -1,8 +1,9 @@
 package commands;
 
+import collection.CommandName;
 import server_kernel.Invoker;
 import server_kernel.Receiver;
-import server_kernel.RepositoryOfMusicBand;
+import server_kernel.CollectionManager;
 
 public class RemoveLowerCommand extends Command {
 
@@ -15,7 +16,7 @@ public class RemoveLowerCommand extends Command {
     }
 
     @Override
-    public void execute(RepositoryOfMusicBand repositoryOfMusicBand, Invoker commandManager) {
+    public void execute(CollectionManager collectionManager, Invoker commandManager) {
         receiver.removeLowerCommand();
     }
 

@@ -3,7 +3,7 @@ package server_kernel;
 
 import collection.MusicBand;
 import commands.Command;
-import commands.CommandName;
+import collection.CommandName;
 import input_output.ConsoleReader;
 import input_output.XMLWriter;
 
@@ -25,8 +25,8 @@ public class Receiver {
     }
 
 
-    public void info(RepositoryOfMusicBand repositoryOfMusicBand){
-        repositoryOfMusicBand.info();
+    public void info(CollectionManager collectionManager){
+        collectionManager.info();
     }
 
     public void help(EnumMap<CommandName, Command> map ) {
@@ -39,27 +39,27 @@ public class Receiver {
                 "*: команда 'execute_script' имеет аргумент [file name] - название файла.");
     }
 
-    public void add(RepositoryOfMusicBand repositoryOfMusicBand, MusicBand musicBand) {
-        repositoryOfMusicBand.add(musicBand);
+    public void add(CollectionManager collectionManager, MusicBand musicBand) {
+        collectionManager.add(musicBand);
     }
 
-    public void updateId(RepositoryOfMusicBand repositoryOfMusicBand, MusicBand musicBand, Long id){
-        repositoryOfMusicBand.updateId(musicBand,id);
+    public void updateId(CollectionManager collectionManager, MusicBand musicBand, Long id){
+        collectionManager.updateId(musicBand,id);
     }
 
-    public void removeByID(RepositoryOfMusicBand repositoryOfMusicBand, MusicBand musicBand, Integer id){
-        repositoryOfMusicBand.removeByID(id);
+    public void removeByID(CollectionManager collectionManager, MusicBand musicBand, Integer id){
+        collectionManager.removeByID(id);
     }
 
     public void printFiledAscendingLabelCommand() {
     }
 
-    public void show(RepositoryOfMusicBand repositoryOfMusicBand) {
-        repositoryOfMusicBand.show();
+    public void show(CollectionManager collectionManager) {
+        collectionManager.show();
     }
 
-    public void save(RepositoryOfMusicBand repositoryOfMusicBand) {
-        xmlWriter.write(repositoryOfMusicBand.getMusicBandCollection());
+    public void save(CollectionManager collectionManager) {
+        xmlWriter.write(collectionManager.getMusicBandCollection());
     }
 
     public void removeLowerCommand() {
@@ -71,13 +71,13 @@ public class Receiver {
     /**
      * Обеспечивает добавление элемента с заданным id
      *
-     * @param repositoryOfMusicBand коллекция, которая хранит города
+     * @param collectionManager коллекция, которая хранит города
      * @param key              ключ,уникальный id, по по которому будет добавлен элемент
      *      * @see RepositoryOfCity#insert(int)
      */
 
-    public void insert(RepositoryOfMusicBand repositoryOfMusicBand, MusicBand musicBand, Integer key) {
-        repositoryOfMusicBand.insert(musicBand,key);
+    public void insert(CollectionManager collectionManager, MusicBand musicBand, Integer key) {
+        collectionManager.insert(musicBand,key);
     }
 
     public void filterStartsWithName() {

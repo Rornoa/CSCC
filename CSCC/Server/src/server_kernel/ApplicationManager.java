@@ -3,30 +3,22 @@ package server_kernel;
 import commands.*;
 import input_output.ConsoleReader;
 import input_output.XMLReader;
-import server_kernel.network.Network;
-
-import java.io.IOException;
-
-/**
- * Class wherein describes initialize method of objects which responsible for application work.
- *
- * @see ApplicationManager#initialize()
- */
+import server_kernel.network.ClientHandler;
 
 public class ApplicationManager {
 
     private Invoker invoker;
-    private RepositoryOfMusicBand repositoryOfMusicBand;
+    private CollectionManager collectionManager;
     private Receiver receiver;
     private ConsoleReader consoleReader;
     private String line ="";
     public static String path ="";
     private XMLReader xmlReaderClass;
-    private Network network;
+    private ClientHandler clientHandler;
 
     {
         receiver = new Receiver();
-        repositoryOfMusicBand = new RepositoryOfMusicBand();
+        collectionManager = new CollectionManager();
         invoker = new Invoker();
         consoleReader = new ConsoleReader();
         xmlReaderClass = new XMLReader();
@@ -44,13 +36,6 @@ public class ApplicationManager {
             path = directory;
         }
     }
-
-    /**
-     * This method is responsible for creationg all commands of application.
-     * Here describes the separation of commands with and without arguments, as well as sending them for execution.
-     *
-     * @throws IOException error of input/output, can be found here
-     */
 
     public void initialize(){
         //repositoryOfMusicBand.getMusicBandCollection().putAll(xmlReaderClass.parseXML());
@@ -74,32 +59,30 @@ public class ApplicationManager {
         Command filterStartsWithName = new FilterStartsWithNameCommand(receiver);
         Command printFieldAscendingLabel = new PrintFieldAscendingLabelCommand(receiver);
 
-        invoker.setCommandMap(help.getName(), help);
-        invoker.setCommandMap(info.getName(), info);
-        invoker.setCommandMap(show.getName(), show);
-        invoker.setCommandMap(add.getName(), add);
-        invoker.setCommandMap(updateId.getName(), updateId);
-        invoker.setCommandMap(removeByID.getName(), removeByID);
-        invoker.setCommandMap(clear.getName(), clear);
-        invoker.setCommandMap(save.getName(), save);
-        invoker.setCommandMap(executeScript.getName(), executeScript);
-        invoker.setCommandMap(exit.getName(), exit);
-        invoker.setCommandMap(insert.getName(), insert);
-        invoker.setCommandMap(removeFirst.getName(), removeFirst);
-        invoker.setCommandMap(removeLower.getName(), removeLower);
-        invoker.setCommandMap(countLessThanGenre.getName(), countLessThanGenre);
-        invoker.setCommandMap(filterStartsWithName.getName(), filterStartsWithName);
-        invoker.setCommandMap(printFieldAscendingLabel.getName(), printFieldAscendingLabel);
+        invoker.put(help.getName(), help);
+        invoker.put(info.getName(), info);
+        invoker.put(show.getName(), show);
+        invoker.put(add.getName(), add);
+        invoker.put(updateId.getName(), updateId);
+        invoker.put(removeByID.getName(), removeByID);
+        invoker.put(clear.getName(), clear);
+        invoker.put(save.getName(), save);
+        invoker.put(executeScript.getName(), executeScript);
+        invoker.put(exit.getName(), exit);
+        invoker.put(insert.getName(), insert);
+        invoker.put(removeFirst.getName(), removeFirst);
+        invoker.put(removeLower.getName(), removeLower);
+        invoker.put(countLessThanGenre.getName(), countLessThanGenre);
+        invoker.put(filterStartsWithName.getName(), filterStartsWithName);
+        invoker.put(printFieldAscendingLabel.getName(), printFieldAscendingLabel);
 
-        while(true){
-            network = new Network();
-
-        }
     }
 
-    public String mainMassage(){
-        return "Welcome to console base builder. v1.0" + System.lineSeparator() + "© Developed by Nik in 2020. All rights reserved." + System.lineSeparator() + System.lineSeparator() + "Enter 'help' to see legend.";
+    public void serverStarter(){
+            while (true) {
+                clientHandler = new ClientHandler(invoker);
+                clientHandler.waitRequest();
+                new Thread(clientHandler::waitRequest).start();
+            }
     }
-
-
 }

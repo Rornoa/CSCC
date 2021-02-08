@@ -1,22 +1,21 @@
 package commands;
 
-import server_kernel.Invoker;
+import collection.CommandName;
 import server_kernel.Receiver;
-import server_kernel.RepositoryOfMusicBand;
+import server_kernel.CollectionManager;
 
 public class InfoCommand extends Command {
 
     private Receiver receiver;
 
     public InfoCommand(Receiver receiver) {
-        setName(CommandName.INFO);
-        setDescription("вывести справку по доступным командам");
         this.receiver = receiver;
+        setDescription("вывести справку по доступным командам");
+        setName(CommandName.INFO);
     }
 
     @Override
-    public void execute(RepositoryOfMusicBand repositoryOfCity,
-                        Invoker commandManager, String... args) {
+    public void execute(CollectionManager repositoryOfCity) {
         receiver.info(repositoryOfCity);
     }
 }

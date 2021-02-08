@@ -1,7 +1,8 @@
 package commands;
 
+import collection.CommandName;
 import server_kernel.Invoker;
-import server_kernel.RepositoryOfMusicBand;
+import server_kernel.CollectionManager;
 import collection.MusicBand;
 
 import java.io.IOException;
@@ -17,26 +18,28 @@ public abstract class Command {
     private String description;
     private String args = "";
 
-    public void execute(EnumMap<CommandName, Command> map, RepositoryOfMusicBand repositoryOfMusicBand,
+    public void execute(EnumMap<CommandName, Command> map, CollectionManager collectionManager,
                         Invoker invoker, String... args) throws IOException {
     }
-    public void execute(EnumMap<CommandName, Command> map, RepositoryOfMusicBand repositoryOfMusicBand,
+    public void execute(EnumMap<CommandName, Command> map, CollectionManager collectionManager,
                         Invoker invoker){
     }
 
-    public void execute(EnumMap<CommandName, Command> map, RepositoryOfMusicBand repositoryOfMusicBand,
+    public void execute(EnumMap<CommandName, Command> map, CollectionManager collectionManager,
                         Invoker invoker, MusicBand musicBand){
     }
 
-    public void execute(EnumMap<CommandName, Command> map, RepositoryOfMusicBand repositoryOfCity,
+    public void execute(EnumMap<CommandName, Command> map, CollectionManager repositoryOfCity,
                         Invoker invoker, MusicBand musicBand, String... args) throws IOException {
     }
 
-    public void execute(EnumMap<CommandName, Command> map, CommandName commandName, RepositoryOfMusicBand repositoryOfMusicBand){
+    public void execute(EnumMap<CommandName, Command> map, CommandName commandName, CollectionManager collectionManager){
 
     }
 
-    public void execute(RepositoryOfMusicBand repositoryOfMusicBand, Invoker commandManager){}
+    public void execute(CollectionManager collectionManager, Invoker invoker){}
+
+    public void execute(CollectionManager collectionManager){}
 
     public String getArgs() {
         return args;

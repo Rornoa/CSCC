@@ -4,22 +4,16 @@ import collection.building.BandBuilder;
 import collection.MusicBand;
 
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 import java.util.Vector;
 
 /**
  * Класс, который хранит в себе коллекцию объектов и хранит реализациюю некоторых команд, связанных с коллекцией напрямую
  */
 
-public class RepositoryOfMusicBand {
+public class CollectionManager {
 
     private final Vector<MusicBand> musicBandCollection = new Vector<>();
-    private BandBuilder bandBuilder;
-    private MusicBand musicBand;
-    //private LocalDateTime birthYearOfTreemap;
-
-    public RepositoryOfMusicBand(){
-            this.bandBuilder = new BandBuilder();
-    }
 
     public Vector<MusicBand> getMusicBandCollection(){
         return musicBandCollection;}
