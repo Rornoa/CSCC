@@ -11,19 +11,21 @@ import input_output.Message2;
 
 public class Receiver {
 
+    MusicBand musicBand;
     ConsoleReader input;
+    String stringMassageToClient;
 
     public Receiver() {
         input = new ConsoleReader();
-        Message2 message2 = new Message2("");
     }
 
-    public void info(CollectionManager collectionManager) {
+    public Message2 info(CollectionManager collectionManager) {
         collectionManager.info();
+        return null;
     }
 
-    public void help() {
-        message2.setStringMessageToClient("Доступные команды" + "\n" +
+    public Message2 help() {
+          return new Message2( "Доступные команды" + "\n" +
                         "help : вывести справку по доступным командам\n" +
                         "info : вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)\n" +
                         "show : вывести в стандартный поток вывода все элементы коллекции в строковом представлении\n" +
@@ -42,33 +44,41 @@ public class Receiver {
                         "print_field_ascending_label : вывести значения поля label всех элементов в порядке возрастания);");
     }
 
-    public void add(CollectionManager collectionManager, MusicBand musicBand) {
+    public Message2 add(CollectionManager collectionManager, MusicBand musicBand) {
         collectionManager.add(musicBand);
+        return null;
     }
 
-    public void updateId(CollectionManager collectionManager, MusicBand musicBand, Long id) {
+    public Message2 updateId(CollectionManager collectionManager, MusicBand musicBand, Long id) {
         collectionManager.updateId(musicBand, id);
+        return null;
     }
 
-    public void removeByID(CollectionManager collectionManager, MusicBand musicBand, Integer id) {
+    public Message2 removeByID(CollectionManager collectionManager, MusicBand musicBand, Integer id) {
         collectionManager.removeByID(id);
+        return null;
     }
 
-    public void printFiledAscendingLabelCommand() {
+    public Message2 printFiledAscendingLabelCommand() {
+        return null;
     }
 
-    public void show(CollectionManager collectionManager) {
+    public Message2 show(CollectionManager collectionManager) {
         collectionManager.show();
+        return null;
     }
 
-    public void save(CollectionManager collectionManager) {
+    public Message2 save(CollectionManager collectionManager) {
         //xmlWriter.write(collectionManager.getMusicBandCollection());
+        return null;
     }
 
-    public void removeLowerCommand() {
+    public Message2 removeLowerCommand() {
+        return null;
     }
 
-    public void removeFirstCommand() {
+    public Message2 removeFirstCommand() {
+        return null;
     }
 
     /**
@@ -79,28 +89,34 @@ public class Receiver {
      *                          * @see RepositoryOfCity#insert(int)
      */
 
-    public void insert(CollectionManager collectionManager, MusicBand musicBand, Integer key) {
+    public Message2 insert(CollectionManager collectionManager, MusicBand musicBand, Integer key) {
         collectionManager.insert(musicBand, key);
+        return null;
     }
 
-    public void filterStartsWithName() {
+    public Message2 filterStartsWithName() {
+        return null;
     }
 
     /**
      * Обеспечивает завершение приложения
      */
 
-    public void exit() {
+    public Message2 exit() {
         System.out.println("System exited");
         System.exit(0);
+        return  null;
     }
 
-    public void executeScriptCommand() {
+    public Message2 executeScriptCommand() {
+        return null;
     }
 
-    public void countLessThanGenreCommand() {
+    public Message2 countLessThanGenreCommand() {
+        return null;
     }
 
-    public void clear() {
+    public Message2 clear() {
+        return null;
     }
 }

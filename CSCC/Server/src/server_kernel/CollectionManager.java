@@ -10,7 +10,7 @@ import java.util.Vector;
 /**
  * Класс, который хранит в себе коллекцию объектов и хранит реализациюю некоторых команд, связанных с коллекцией напрямую
  */
-
+// TODO: 15.02.2021 добавить в качестве полей аргумент
 public class CollectionManager {
 
     private final Vector<MusicBand> musicBandCollection = new Vector<>();

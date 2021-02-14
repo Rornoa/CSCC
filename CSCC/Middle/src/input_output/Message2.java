@@ -12,7 +12,7 @@ public class Message2 implements Serializable {
 
     private MusicBand musicBand;
     private CommandName commandName;
-    private static String stringMassageToClient;
+    private String stringMassageToClient;
     private long longArgs;
 
     public Message2(String stringMassageToClient){
@@ -32,7 +32,7 @@ public class Message2 implements Serializable {
     }
 
     public void setStringMessageToClient(String strMTC){
-        this.stringMassageToClient = strMTC;
+        stringMassageToClient = strMTC;
     }
 
     public CommandName getCommandName() {
@@ -47,11 +47,7 @@ public class Message2 implements Serializable {
         return musicBand;
     }
 
-    public static String getStringMassageToClient() {
+    public String getStringMessageToClient() {
         return stringMassageToClient;
-    }
-
-    public void setStringMassageToClient(String stringMassageToClient) {
-        this.stringMassageToClient = stringMassageToClient;
     }
 }

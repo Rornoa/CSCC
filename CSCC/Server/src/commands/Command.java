@@ -1,6 +1,7 @@
 package commands;
 
 import collection.CommandName;
+import input_output.Message2;
 import server_kernel.Invoker;
 import server_kernel.CollectionManager;
 import collection.MusicBand;
@@ -12,34 +13,43 @@ import java.util.EnumMap;
  * Абсрактный класс Команды. Содержит в себе название, описание команды и ее аргументы и выполение
  */
 
-public abstract class Command {
+public class Command {
 
     private CommandName name;
     private String description;
     private String args = "";
 
-    public void execute(EnumMap<CommandName, Command> map, CollectionManager collectionManager,
-                        Invoker invoker, String... args) throws IOException {
-    }
-    public void execute(EnumMap<CommandName, Command> map, CollectionManager collectionManager,
-                        Invoker invoker){
+    public Message2 execute(EnumMap<CommandName, Command> map, CollectionManager collectionManager,
+                            Invoker invoker, String... args) throws IOException{
+        return null;
     }
 
-    public void execute(EnumMap<CommandName, Command> map, CollectionManager collectionManager,
-                        Invoker invoker, MusicBand musicBand){
+
+    public Message2 execute(EnumMap<CommandName, Command> map, CollectionManager collectionManager,
+                                     Invoker invoker){
+        return null;
     }
 
-    public void execute(EnumMap<CommandName, Command> map, CollectionManager repositoryOfCity,
-                        Invoker invoker, MusicBand musicBand, String... args) throws IOException {
+    public Message2 execute(EnumMap<CommandName, Command> map, CollectionManager collectionManager,
+                                     Invoker invoker, MusicBand musicBand){
+        return null;
     }
 
-    public void execute(EnumMap<CommandName, Command> map, CommandName commandName, CollectionManager collectionManager){
-
+    public Message2 execute(EnumMap<CommandName, Command> map, CollectionManager repositoryOfCity,
+                                     Invoker invoker, MusicBand musicBand, String... args) throws IOException {
+        return null;
+    }
+    public Message2 execute(EnumMap<CommandName, Command> map, CommandName commandName, CollectionManager collectionManager){
+        return null;
     }
 
-    public void execute(CollectionManager collectionManager, Invoker invoker){}
+    public Message2 execute(CollectionManager collectionManager, Invoker invoker){
+        return null;
+    }
 
-    public void execute(CollectionManager collectionManager){}
+    public Message2 execute(CollectionManager collectionManager){
+        return null;
+    }
 
     public String getArgs() {
         return args;

@@ -1,6 +1,7 @@
 package commands;
 
 import collection.CommandName;
+import input_output.Message2;
 import server_kernel.Invoker;
 import server_kernel.Receiver;
 import server_kernel.CollectionManager;
@@ -18,8 +19,8 @@ public class AddCommand extends Command {
     }
 
     @Override
-    public void execute(EnumMap<CommandName, Command> map, CollectionManager collectionManager,
-                        Invoker invoker, MusicBand musicBand) {
-        receiver.add(collectionManager, musicBand);
+    public Message2 execute(EnumMap<CommandName, Command> map, CollectionManager collectionManager,
+                            Invoker invoker, MusicBand musicBand) {
+       return receiver.add(collectionManager, musicBand);
     }
 }

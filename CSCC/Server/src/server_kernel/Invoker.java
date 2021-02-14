@@ -2,6 +2,7 @@ package server_kernel;
 
 import commands.Command;
 import collection.CommandName;
+import input_output.Message2;
 
 import java.util.EnumMap;
 
@@ -23,8 +24,8 @@ public class Invoker {
 
     public EnumMap<CommandName, Command> getCommandMap(){return commandMap;}
 
-    public void executeCommand( CommandName commandName){
+    public Message2 executeCommand(CommandName commandName){
         Command command = commandMap.get(commandName);
-        command.execute(commandMap,commandName , collectionManager);
+       return command.execute(collectionManager);
     }
 }

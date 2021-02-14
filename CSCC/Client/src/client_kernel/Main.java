@@ -3,6 +3,7 @@ package client_kernel;
 import client_kernel.network.Network;
 import input_output.ConsoleReader;
 import input_output.Message1;
+import input_output.Message2;
 
 import java.io.IOException;
 
@@ -17,7 +18,8 @@ public class Main {
             Message1 message1 = app.validate(consoleReader.getScanner());
             if (message1.getCommandName() != null) {
                 client.write(message1);
-                System.out.println(client.read());
+                Message2 message2 = (Message2) client.read();
+                System.out.println(message2.getStringMessageToClient());
             }else
             client.closeStreams();
         }while(true);

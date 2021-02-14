@@ -23,7 +23,7 @@ public class Application {
     private final Receiver receiver;
     private ConsoleReader consoleReader;
     private Network network;
-    private Message2 message2;
+    private Message2 message2 = new Message2("a");
 
     public Application() {
         receiver = new Receiver();
@@ -75,8 +75,8 @@ public class Application {
             do {
                 network = new Network(invoker);
                 Message1 message1 = (Message1) network.read();
-                invoker.executeCommand(message1.getCommandName());
-
+                System.out.println(message1.getCommandName());
+                message2 = invoker.executeCommand(message1.getCommandName());
                 network.write(message2);
                 network.closeStreams();
             } while (true);
