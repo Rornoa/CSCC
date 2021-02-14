@@ -16,6 +16,6 @@ public class HelpCommand extends Command{
 
     @Override
     public void execute(CollectionManager collectionManager, Invoker commandManager) {
-        //receiver.help();
+        receiver.help();
     }
 }

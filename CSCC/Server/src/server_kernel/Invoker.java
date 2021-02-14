@@ -16,7 +16,8 @@ public class Invoker {
 
     private final EnumMap<CommandName, Command> commandMap = new EnumMap<>(CommandName.class);
     private final CollectionManager collectionManager = new CollectionManager();
-    public void put(CommandName commandName, Command command){
+
+    public void setCommandMap(CommandName commandName, Command command){
         commandMap.put(commandName,command);
     }
 

@@ -5,12 +5,12 @@ import exceptions.IMassages;
 
 import java.util.Scanner;
 
-public class CommandArgumentHandler implements IMassages {
+public class ArgumentHandler implements IMassages {
 
     private Scanner scanner;
     private ConsoleReader consoleReader;
 
-    public CommandArgumentHandler() {
+    public ArgumentHandler() {
         this.consoleReader = new ConsoleReader();
     }
 

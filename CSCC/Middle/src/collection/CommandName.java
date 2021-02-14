@@ -1,6 +1,8 @@
 package collection;
 
-public enum CommandName {
+import java.io.Serializable;
+
+public enum CommandName implements Serializable {
     HELP("help"),
     INFO("info"),
     SHOW("info"),

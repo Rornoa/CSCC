@@ -5,38 +5,38 @@ import collection.MusicBand;
 
 import java.io.Serializable;
 
-public class Message implements Serializable {
+public class Message1 implements Serializable {
     private CommandName commandName;
     private String commandArgs;
     private long commandArg;
     private MusicBand band;
 
-    public Message(CommandName commandName){
+    public Message1(CommandName commandName){
         this.commandName=commandName;
     }
 
-    public Message(CommandName commandName, String commandArgs){
+    public Message1(CommandName commandName, String commandArgs){
         this.commandName = commandName;
         this.commandArgs = commandArgs;
     }
 
-    public Message(CommandName commandName, MusicBand musicBand){
+    public Message1(CommandName commandName, MusicBand musicBand){
         this.commandName = commandName;
         band = musicBand;
     }
 
-    public Message(CommandName commandName,String commandArgs,MusicBand musicBand){
+    public Message1(CommandName commandName, String commandArgs, MusicBand musicBand){
         this.commandName = commandName;
         this.commandArgs = commandArgs;
         band = musicBand;
     }
 
-    public Message(CommandName commandName, int commandArg) {
+    public Message1(CommandName commandName, int commandArg) {
         this.commandName = commandName;
         this.commandArg = commandArg;
     }
 
-    public Message(CommandName commandName, int commandArg, MusicBand musicBand) {
+    public Message1(CommandName commandName, int commandArg, MusicBand musicBand) {
         this.commandName = commandName;
         this.commandArg = commandArg;
         band = musicBand;
@@ -54,6 +54,10 @@ public class Message implements Serializable {
 
     public MusicBand getMusicBand(){
         return band;
+    }
+
+    public void setCommandArgs(String commandArgs) {
+        this.commandArgs = commandArgs;
     }
 
     @Override

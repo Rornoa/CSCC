@@ -1,20 +1,25 @@
 package client_kernel;
 
-import client_kernel.network.ClientNetwork;
+import client_kernel.network.Network;
 import input_output.ConsoleReader;
+import input_output.Message1;
 
 import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
-        ClientNetwork client = new ClientNetwork("127.0.0.1",66666);
+        Network client = new Network("localhost",8888);
         ConsoleReader consoleReader = new ConsoleReader();
-        Application app = new Application();
+        do {
+            Validator app = new Validator();
 
-        client.write(app.validate(consoleReader.getScanner()));
-        client.read();
-        client.closeStreams();
-
+            Message1 message1 = app.validate(consoleReader.getScanner());
+            if (message1.getCommandName() != null) {
+                client.write(message1);
+                System.out.println(client.read());
+            }else
+            client.closeStreams();
+        }while(true);
     }
 }

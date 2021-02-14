@@ -54,7 +54,7 @@ public abstract class Command {
     }
 
     public void setName(CommandName commandName) {
-        this.name = name;
+        this.name = commandName;
     }
 
     public CommandName getName() {

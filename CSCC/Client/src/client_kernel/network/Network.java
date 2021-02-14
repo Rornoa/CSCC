@@ -1,12 +1,13 @@
 package client_kernel.network;
 
-import input_output.Message;
+import input_output.Message1;
+import input_output.Message2;
 
 import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
 
-public class ClientNetwork
+public class Network
 {
     private transient Socket socket;
     private static transient ObjectOutputStream oos;
@@ -15,14 +16,14 @@ public class ClientNetwork
     private String address;
     private int port;
 
-    public ClientNetwork(String address, int port) throws IOException {
+    public Network(String address, int port) throws IOException {
         this.address = address;
         this.port = port;
         socket = new Socket(address,port);
         oos = new ObjectOutputStream(socket.getOutputStream());
         ois = new ObjectInputStream(socket.getInputStream());
-        System.out.println("Welcome to Client side\n" + "Connecting to the server\n\t" + "(IP address " + socket.getInetAddress() + ", port " + socket.getPort() + ")");
-        System.out.println("The connection is established.");
+        System.out.println("Добро пожаловать на клиентскую сторону!\n" + "Подключаем вас к серверу\n\t" + "(IP address " + socket.getInetAddress() + ", port " + socket.getPort() + ")");
+        System.out.println("Соединение установлено");
         System.out.println("\tLocalPort = " + socket.getLocalPort() + "\n\tInetAddress.HostAddress = " + socket.getInetAddress().getHostAddress());
     }
 
@@ -30,19 +31,20 @@ public class ClientNetwork
 
     public static ObjectOutputStream getOos(){ return oos; }
 
-    public void write(Message object) throws IOException {
-        while(object!=null){
+    public void write(Message1 object) throws IOException {
+        if (object!=null){
             oos.writeObject(object);
+        }else{
+            System.out.println("object=null!");
         }
     }
 
-    public Message read() throws IOException, ClassNotFoundException {
-        return (Message)ois.readObject();
+    public Object read() throws IOException, ClassNotFoundException {
+        return ois.readObject();
     }
 
     public void closeStreams() throws IOException {
         ois.close();
-
         oos.flush();
         oos.close();
         try {

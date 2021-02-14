@@ -16,12 +16,12 @@ import java.util.Vector;
 public class CollectionManager {
 
     private static String filePathToWriteName;
-    private Application app;
+    private Validator app;
     private Date initialisationDate;
     private Vector<MusicBand> vector;
 
-    public CollectionManager(Application application) {
-        this.app = application;
+    public CollectionManager(Validator validator) {
+        this.app = validator;
         this.initialisationDate = new Date();
         vector = new Vector<MusicBand>();
     }
